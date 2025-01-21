@@ -312,7 +312,29 @@ card.style.transform="scale(1.002)";
     rating.className="category";
     rating.textContent=`Rating: ${product.rating.rate} (${product.rating.count} reviews)`;
     card.appendChild(rating);
-
+    
+    const button=document.createElement("button");
+    button.innerHTML="Remove Card";
+    button.style.marginTop="10px";
+    button.style.padding="5px 15px";
+    button.style.borderRadius="50px";
+    button.style.border="none";
+    button.style.backgroundColor="#ADD8E6";
+    button.style.boxShadow="0 0 10px #87CEFA"
+    card.appendChild(button)
+    
+    button.addEventListener("click",()=>{
+    cards.removeChild(card);
+    });
+    button.addEventListener("mouseover",()=>{
+    button.style.boxShadow="0 0 20px black";
+    button.style.transform="scale(1.002)";
+    });
+        
+    button.addEventListener("mouseout",()=>{
+    button.style.boxShadow="0 0 2px black";
+    button.style.transform="scale(1)";
+    });
 
     cards.appendChild(card);
 }
